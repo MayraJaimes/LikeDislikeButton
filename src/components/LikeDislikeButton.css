@@ -1,0 +1,31 @@
+.button {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 30px;
+  border-radius: 4px;
+}
+
+.likeButtonActive {
+  background: green;
+}
+
+.disLikeButtonActive {
+  background: red;
+}
+
+.likeButton:hover {
+    background: #90EE90;
+}
+
+.disLikeButton:hover {
+    background: #FFB6C1;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:active {
+    transform: scale(0.99);
+}

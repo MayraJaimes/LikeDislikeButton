@@ -1,21 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './LikeDislikeButton.css';
 
 const LikeDislikeButton = () => {
 
-  const styles = {
-    likeButton: {
-      width: "200px",
-      color: "red",
-      margin: "10px",
-      padding: "10px"
-    },
-    disLikeButton: {
-      width: "200px",
-      color: "blue",
-      margin: "10px",
-      padding: "10px"
-    }
-  }
 
   const [likeCount, setLikeCount] = useState(5)
   const [clickedLike, setClickedLike] = useState(false)
@@ -48,11 +35,15 @@ const LikeDislikeButton = () => {
       }
     }
   }
+  
+
+
+  //disLikeButtonActive
 
   return(
     <div>
-     <button style={styles.likeButton} onClick={increaseCount}> Like | {likeCount}</button>
-     <button style={styles.disLikeButton} onClick={decreaseCount}> Dislike | {disLikeCount}</button>
+     <button className={`button likeButton ${clickedLike ? "likeButtonActive" : ""}`} onClick={increaseCount}> Like | {likeCount}</button>
+     <button className={`button disLikeButton ${clickedDisLike ? "disLikeButtonActive" : ""}`} onClick={decreaseCount}> Dislike | {disLikeCount}</button>
 
     </div>
   ) 

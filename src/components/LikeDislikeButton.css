@@ -7,11 +7,11 @@
 }
 
 .likeButtonActive {
-  background: green;
+  background: #32CD32;
 }
 
 .disLikeButtonActive {
-  background: red;
+  background: #FF0000;
 }
 
 .likeButton:hover {

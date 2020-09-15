@@ -11,10 +11,15 @@ const LikeDislikeButton = () => {
   const [clickedDisLike, setClickedDisLike] = useState(false)
 
 
-  const increaseCount = () => {
+  const increaseLikeCount = () => {
     if(clickedLike === false){
       setLikeCount(prevCount => prevCount + 1)
       setClickedLike(true)
+
+      if(clickedDisLike){
+        setClickedDisLike(false);
+        setDisLikeCount(prevCount => prevCount - 1)
+      }
     }
     else {
       setLikeCount(prevCount => prevCount - 1)
@@ -22,18 +27,23 @@ const LikeDislikeButton = () => {
     }
   }
 
-  const decreaseCount = () => {
-    if(disLikeCount > 0){
+  const increaseDislikeCount = () => {
 
       if(clickedDisLike === false){
-        setDisLikeCount(prevCount => prevCount - 1)
+        setDisLikeCount(prevCount => prevCount + 1)
         setClickedDisLike(true);
+
+        if(clickedLike){
+          setClickedLike(false);
+          setLikeCount(prevCount => prevCount - 1)
+
+        }
       }
       else{
-        setDisLikeCount(prevCount => prevCount + 1)
+        setDisLikeCount(prevCount => prevCount - 1)
         setClickedDisLike(false);
       }
-    }
+    
   }
   
 
@@ -42,8 +52,8 @@ const LikeDislikeButton = () => {
 
   return(
     <div>
-     <button className={`button likeButton ${clickedLike ? "likeButtonActive" : ""}`} onClick={increaseCount}> Like | {likeCount}</button>
-     <button className={`button disLikeButton ${clickedDisLike ? "disLikeButtonActive" : ""}`} onClick={decreaseCount}> Dislike | {disLikeCount}</button>
+     <button className={`button likeButton ${clickedLike ? "likeButtonActive" : ""}`} onClick={increaseLikeCount}> Like | {likeCount}</button>
+     <button className={`button disLikeButton ${clickedDisLike ? "disLikeButtonActive" : ""}`} onClick={increaseDislikeCount}> Dislike | {disLikeCount}</button>
 
     </div>
   ) 

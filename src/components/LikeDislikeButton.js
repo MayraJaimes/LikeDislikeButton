@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './LikeDislikeButton.css';
 
-const LikeDislikeButton = () => {
+const LikeDislikeButton = ({likeNumber, disLikeNumber}) => {
 
 
-  const [likeCount, setLikeCount] = useState(5)
+  const [likeCount, setLikeCount] = useState(likeNumber)
   const [clickedLike, setClickedLike] = useState(false)
 
-  const [disLikeCount, setDisLikeCount] = useState(8)
+  const [disLikeCount, setDisLikeCount] = useState(disLikeNumber)
   const [clickedDisLike, setClickedDisLike] = useState(false)
 
 
@@ -46,10 +46,6 @@ const LikeDislikeButton = () => {
     
   }
   
-
-
-  //disLikeButtonActive
-
   return(
     <div>
      <button className={`button likeButton ${clickedLike ? "likeButtonActive" : ""}`} onClick={increaseLikeCount}> Like | {likeCount}</button>

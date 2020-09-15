@@ -1,9 +1,17 @@
 .button {
-  width: 200px;
+  width: 150px;
   margin: 10px;
   padding: 10px;
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 4px;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:active {
+  transform: scale(0.99);
 }
 
 .likeButtonActive {
@@ -22,10 +30,3 @@
     background: #FFB6C1;
 }
 
-.button:focus {
-    outline: none;
-}
-
-.button:active {
-    transform: scale(0.99);
-}
